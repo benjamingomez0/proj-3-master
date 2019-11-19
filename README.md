@@ -37,6 +37,7 @@ ingredients {
                     calories
                 }
             }
+instructions
 servingSize
 tags []
     - category, class, region, etc
@@ -46,6 +47,7 @@ time    {
             active
             total
         }
+add greater functionality to the instructions
 pictures
 comments
 ratings
