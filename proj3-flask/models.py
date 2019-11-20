@@ -6,7 +6,7 @@ DATABASE = SqliteDatabase('recipes.sqlite')
 
 class Recipe(Model):
     name = CharField()
-    ingredients = CharField()
+    # ingredients = CharField()
     directions = TextField()
     nutrients = CharField()
     servings = CharField()
