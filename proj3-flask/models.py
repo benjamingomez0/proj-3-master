@@ -6,11 +6,13 @@ DATABASE = SqliteDatabase('recipes.sqlite')
 
 class Recipe(Model):
     name = CharField()
-    ingredients = CharField()
-    directions = TextField()
-    nutrients = CharField()
-    servings = CharField()
     user_id = CharField()
+    ingredientId1 = CharField()
+    ingredientId2 = CharField()
+    ingredientId3 = CharField()
+    directions = TextField()
+    calories = CharField()
+    servings = CharField()
 
     class Meta: 
         database = DATABASE
@@ -25,9 +27,14 @@ class User(UserMixin, Model):
     class Meta: 
         database = DATABASE
 
+class Ingredient(Model):
+    name = CharField()
+    quantity = CharField()
+
+
 
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([Recipe, User], safe=True)
+    DATABASE.create_tables([Recipe, User, Ingredient], safe=True)
     print("TABLES Created")
     DATABASE.close()
