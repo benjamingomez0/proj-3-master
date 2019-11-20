@@ -31,6 +31,8 @@ class Ingredient(Model):
     name = CharField()
     quantity = CharField()
 
+    class Meta: 
+        database = DATABASE
 
 
 def initialize():
