@@ -1,8 +1,11 @@
 # import flask
-from flask import Flask, g
+from flask import Flask, jsonify, g
+from flask_cors import CORS
+
 from flask_login import LoginManager
 
 # import resources
+from resources.users import user
 
 
 # import models
@@ -42,11 +45,11 @@ def after_request(response):
 
 
 # connect CORS to React
-
+CORS(user, origins=['http://localhost:3000'], supports_credentials=True)
 
 
 # register blueprints
-
+app.register_blueprint(user, url_prefix='/api/v1/users')
 
 
 if __name__ == '__main__':
