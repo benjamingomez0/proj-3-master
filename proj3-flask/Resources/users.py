@@ -29,4 +29,13 @@ def register():
 def login():
     payload = request.get_json()
     try:
-        user = models.User
+        user = models.User.get_json(models.User.email===payload['email'])
+        user_dict = model_to_dict(user)
+        if check_password_hash(user_dict['password'], payload['password']):
+            del user_dict['password']
+            login_user(user)\
+            return jsonify(data=user_dict, status={'code': 201,'Success'})
+        else:
+            return jsonify(data= {}, status={'code':401,'message':'Username or Password Incorrect'})
+     except models.DoesNotExist:
+        return jsonify(data={}, status={'code':401,'message':'Username or Password Incorrect'})
