@@ -49,7 +49,7 @@ CORS(user, origins=['http://localhost:3000'], supports_credentials=True)
 
 
 # register blueprints
-app.register_blueprint(user, url_prefix='/api/v1/users')
+app.register_blueprint(user, url_prefix='/users')
 
 
 if __name__ == '__main__':
