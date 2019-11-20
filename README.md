@@ -30,13 +30,14 @@ Recipes MVP:
 name
 userId
 ingredients {
-            ingredientName
+            label (ingredient name)
             ingredientId
             quantity
             nutritionalData {
                     calories
                 }
             }
+instructions
 servingSize
 tags []
     - category, class, region, etc
@@ -46,6 +47,7 @@ time    {
             active
             total
         }
+add greater functionality to the instructions
 pictures
 comments
 ratings
