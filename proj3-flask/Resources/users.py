@@ -21,5 +21,12 @@ def register():
         user = models.User.create(**payload)
          login_user(user)
         user_dict = model_to_dict(user)
+        #remove password from response object
         del user_dict['password']
         return jsonify(data=user_dict, status={'code': 201, 'message': 'Success'})
+        
+@user.route('/login', methods=["POST"])
+def login():
+    payload = request.get_json()
+    try:
+        user = models.User
