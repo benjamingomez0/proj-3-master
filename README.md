@@ -30,7 +30,7 @@ Recipes MVP:
 name
 userId
 ingredients {
-            ingredientName
+            label (ingredient name)
             ingredientId
             quantity
             nutritionalData {
