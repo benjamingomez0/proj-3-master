@@ -17,6 +17,14 @@ class Recipe(Model):
     class Meta: 
         database = DATABASE
 
+class Ingredient(Model):
+    name = CharField()
+    quantity = CharField()
+    recipeId=CharField()
+    
+    class Meta: 
+        database = DATABASE
+
 class User(UserMixin, Model):
     email = CharField(unique=True)
     password = CharField()
@@ -27,12 +35,6 @@ class User(UserMixin, Model):
     class Meta: 
         database = DATABASE
 
-class Ingredient(Model):
-    name = CharField()
-    quantity = CharField()
-
-    class Meta: 
-        database = DATABASE
 
 
 def initialize():
