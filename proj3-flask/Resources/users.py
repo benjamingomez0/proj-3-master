@@ -39,3 +39,10 @@ def login():
             return jsonify(data= {}, status={'code':401,'message':'Username or Password Incorrect'})
     except models.DoesNotExist:
         return jsonify(data={}, status={'code':401,'message':'Username or Password Incorrect'})
+@user.route("/<id>", methods=["GET"])
+def get_User(id):
+    print(id)
+    user = models.User.get_by_id(id)
+    return jsonify(data=model_to_dict(user), status={"code":200, "message": "Success"})
+
+
