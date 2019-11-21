@@ -6,6 +6,7 @@ from flask_login import LoginManager
 
 # import resources
 from Resources.users import user
+from Resources.recipes import recipe
 
 
 # import models
@@ -46,11 +47,12 @@ def after_request(response):
 
 # connect CORS to React
 CORS(user, origins=['http://localhost:3000'], supports_credentials=True)
+CORS(recipe, origins=['http://localhost:3000'], supports_credentials=True)
 
 
 # register blueprints
 app.register_blueprint(user, url_prefix='/users')
-
+app.register_blueprint(recipe,url_prefix='/recipes')
 
 if __name__ == '__main__':
     models.initialize()    
