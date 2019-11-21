@@ -39,6 +39,7 @@ def login():
             return jsonify(data= {}, status={'code':401,'message':'Username or Password Incorrect'})
     except models.DoesNotExist:
         return jsonify(data={}, status={'code':401,'message':'Username or Password Incorrect'})
+        
 @user.route("/<id>", methods=["GET"])
 def get_User(id):
     print(id)
