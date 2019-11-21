@@ -11,3 +11,5 @@ def create_recipe():
    recipe = models.Recipe.create(**payload)
    recipe_dict = model_to_dict(recipe)
    return jsonify(data=recipe_dict, status={"code": 201, "message": "Success"})
+
+   # test
