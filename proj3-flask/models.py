@@ -19,6 +19,7 @@ class Recipe(Model):
     cal = CharField()
     servings = CharField()
     directions = TextField()
+    # UserId=CharField()
 
     class Meta: 
         database = DATABASE
@@ -37,6 +38,6 @@ class User(UserMixin, Model):
 
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([Recipe, User, Ingredient], safe=True)
+    DATABASE.create_tables([Recipe, User], safe=True)
     print("TABLES Created")
     DATABASE.close()

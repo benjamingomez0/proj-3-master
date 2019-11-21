@@ -10,8 +10,8 @@ def create_recipe():
    payload = request.get_json()
    recipe = models.Recipe.create(**payload)
    recipe_dict = model_to_dict(recipe)
-   print(payload)
-   print(recipe_dict)
+   print(payload,'<====payload')
+   print(recipe_dict,'<=====recipe dict')
    return jsonify(data=recipe_dict, status={"code": 201, "message": "Success"})
    
 
