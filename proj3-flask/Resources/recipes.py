@@ -8,10 +8,10 @@ recipe = Blueprint('recipes','recipe')
 @recipe.route('/<id>', methods=["GET"])
 def get_recipe(id):
     try:
-    recipe = model_to_dict(models.Recipe.get_by_id(id))
-    return jsonify(data=recipe, status={"code":201, "message":"Succes"})
+        recipe = model_to_dict(models.Recipe.get_by_id(id))
+        return jsonify(data=recipe, status={"code":201, "message":"Succes"})
     except models.DoesNotExist:
-    return jsonify(data={}, status={"code": 401, "message": "Error"  })
+        return jsonify(data={}, status={"code": 401, "message": "Error Retrieving Information"})
 
 #Create Route for Recipes
 @recipe.route('/', methods=["POST"])
