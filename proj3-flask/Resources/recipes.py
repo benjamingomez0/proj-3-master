@@ -18,7 +18,7 @@ def get_all_recipes():
 def get_recipe(id):
     try:
         recipe = model_to_dict(models.Recipe.get_by_id(id))
-        return jsonify(data=recipe, status={"code":201, "message":"Succes"})
+        return jsonify(data=recipe, status={"code":201, "message":"Success"})
     except models.DoesNotExist:
         return jsonify(data={}, status={"code": 401, "message": "Error Retrieving Information"})
 
@@ -30,5 +30,18 @@ def create_recipe():
    recipe_dict = model_to_dict(recipe)
    return jsonify(data=recipe_dict, status={"code": 201, "message": "Success"})
    
+# update route
+@recipe.route('/<id>', methods=["PUT"])
+def update_recipe(id):
+    payload= request.get_json()
+    query = models.Recipe.update(**payload).where(models.Recipe.id == id)
+    query.execute()
+    return jsonify(data=model_to_dict(models.Recipe.get_by_id(id)), status={"code": 201, "message": "Recipe Updated"})
 
+# delete route
+@recipe.route('/<id>', methods=["DELETE"])
+def delete_recipe(id):
+    query = models.Recipe.delete().where(models.Recipe.id==id)
+    query.execute()
+    return jsonify(data='successfully deleted', status={"code": 201, "message": "Recipe Deleted"})
 
