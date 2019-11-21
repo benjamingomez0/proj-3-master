@@ -5,23 +5,21 @@ DATABASE = SqliteDatabase('recipes.sqlite')
 
 
 class Recipe(Model):
-    name = CharField()
-    user_id = CharField()
+    recipeName = CharField()
+    ingredient1 = CharField()
+    ingredient1Amount = CharField()
     ingredientId1 = CharField()
+    ingredient2 = CharField()
+    ingredient2Amount = CharField()
     ingredientId2 = CharField()
+    ingredient3 = CharField()
+    ingredient3Amount = CharField()
     ingredientId3 = CharField()
-    directions = TextField()
-    calories = CharField()
+    #cal describes cal per serving 
+    cal = CharField()
     servings = CharField()
+    directions = TextField()
 
-    class Meta: 
-        database = DATABASE
-
-class Ingredient(Model):
-    name = CharField()
-    quantity = CharField()
-    recipeId=CharField()
-    
     class Meta: 
         database = DATABASE
 
