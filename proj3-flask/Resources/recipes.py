@@ -8,11 +8,10 @@ recipe = Blueprint('recipes','recipe')
 @recipe.route('/', methods=["GET"])
 def get_all_recipes():
     try:
-        query = models.Recipe.select()
-        query.execute()
-        return jsonify(data=model_to_dict(query)),status={"code":201}, "message":"Success")
+        recipes = [model_to_dict (recipe) for recipe in models.Recipe.select()]
+        return jsonify(data = recipes,status={"code": 201, "message": "Success"})
     except models.DoesNotExist:
-        return jsonify(data={}, status={"code": 401, "message": "Error getting the bag"  })
+        return jsonify(data={}, status={"code": 401, "message": "Error getting the resources"})
 
 #Show Route for individual Recipes
 @recipe.route('/<id>', methods=["GET"])
