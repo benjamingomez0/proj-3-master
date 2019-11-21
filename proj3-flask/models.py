@@ -19,7 +19,7 @@ class Recipe(Model):
     cal = CharField()
     servings = CharField()
     directions = TextField()
-    # UserId=CharField()
+    UserId=CharField()
 
     class Meta: 
         database = DATABASE
