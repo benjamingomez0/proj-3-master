@@ -17,6 +17,7 @@ class Recipe(Model):
     servings = CharField()
     directions = TextField()
     UserId=CharField()
+    imgURL=CharField()
     class Meta: 
         database = DATABASE
 class User(UserMixin, Model):
