@@ -20,6 +20,7 @@ class Recipe(Model):
     imgURL=CharField()
     class Meta: 
         database = DATABASE
+        
 class User(UserMixin, Model):
     email = CharField(unique=True)
     password = CharField()
@@ -28,6 +29,7 @@ class User(UserMixin, Model):
     username = CharField()
     class Meta: 
         database = DATABASE
+
 def initialize():
     DATABASE.connect()
     DATABASE.create_tables([Recipe, User], safe=True)
