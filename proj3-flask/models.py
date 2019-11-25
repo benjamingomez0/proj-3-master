@@ -1,6 +1,10 @@
+import os
 from peewee import *
 from flask_login import UserMixin
-DATABASE = SqliteDatabase('recipes.sqlite')
+from playhouse.db_url import connect
+
+# DATABASE = SqliteDatabase('recipes.sqlite')
+DATABASE = connect(os.environ.get('DATABASE_URL'))
 class Recipe(Model):
     recipeName = CharField()
     ingredient1 = CharField()
