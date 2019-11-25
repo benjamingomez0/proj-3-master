@@ -32,7 +32,7 @@ def after_request(response):
     g.db.close()
     return response
 # connect CORS to React
-CORS(user, origins=['http://localhost:3000, "https://hattrickfoods.herokuapp.com/"], supports_credentials=True)
+CORS(user, origins=['http://localhost:3000', "https://hattrickfoods.herokuapp.com/"], supports_credentials=True)
 CORS(recipe, origins=['http://localhost:3000',"https://hattrickfoods.herokuapp.com/"], supports_credentials=True)
 # register blueprints
 app.register_blueprint(user, url_prefix='/users')
