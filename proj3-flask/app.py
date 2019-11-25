@@ -41,6 +41,7 @@ app.register_blueprint(recipe,url_prefix='/recipes')
 if 'ON_HEROKU' in os.environ:
     print('hitting ')
     models.initialize()
+    
 if __name__ == '__main__':
     models.initialize()    
     app.run(debug=DEBUG, port=PORT)
