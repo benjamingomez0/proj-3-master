@@ -27,6 +27,8 @@ class User(UserMixin, Model):
     first_name = CharField()
     last_name = CharField()
     username = CharField()
+    avatar = CharField()
+
     class Meta: 
         database = DATABASE
 
