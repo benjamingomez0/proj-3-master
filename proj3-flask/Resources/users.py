@@ -3,10 +3,8 @@ from flask import Blueprint, jsonify, request
 from flask_bcrypt import generate_password_hash,check_password_hash
 from flask_login import login_user, current_user
 from playhouse.shortcuts import model_to_dict
-
 #creating blueprint
 user = Blueprint('users','user')
-
 #user create route
 @user.route('/register', methods=["POST"])
 def register():
@@ -24,7 +22,6 @@ def register():
         #remove password from response object
         del user_dict['password']
         return jsonify(data=user_dict, status={'code': 201, 'message': 'Success'})
-        
 @user.route('/login', methods=["POST"])
 def login():
     payload = request.get_json()
@@ -39,11 +36,8 @@ def login():
             return jsonify(data= {}, status={'code':401,'message':'Username or Password Incorrect'})
     except models.DoesNotExist:
         return jsonify(data={}, status={'code':401,'message':'Username or Password Incorrect'})
-        
 @user.route("/<id>", methods=["GET"])
 def get_User(id):
     print(id)
     user = models.User.get_by_id(id)
     return jsonify(data=model_to_dict(user), status={"code":200, "message": "Success"})
-
-
