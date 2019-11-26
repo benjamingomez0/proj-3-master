@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath proj3-flask app.py
+web: gunicorn --pythonpath app app.py
