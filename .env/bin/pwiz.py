@@ -1,4 +1,4 @@
-#!/Users/jonathanhuynh/sei-cranberry-gobblers/Week 10/proj-3-master/.env/bin/python3.7
+#!/Users/GA-SEI/Desktop/sei-cranberry-gobblers/projects/proj-3-master/proj3-flask/.env/bin/python3.7
 
 import datetime
 import sys

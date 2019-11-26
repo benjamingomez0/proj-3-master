@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"/Users/jonathanhuynh/sei-cranberry-gobblers/Week 10/proj-3-master/.env"
+$VIRTUAL_ENV = r"/Users/GA-SEI/Desktop/sei-cranberry-gobblers/projects/proj-3-master/proj3-flask/.env"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]
