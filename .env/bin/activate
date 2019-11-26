@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/jonathanhuynh/sei-cranberry-gobblers/Week 10/proj-3-master/.env"
+VIRTUAL_ENV="/Users/GA-SEI/Desktop/sei-cranberry-gobblers/projects/proj-3-master/proj3-flask/.env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
